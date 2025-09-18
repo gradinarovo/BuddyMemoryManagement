@@ -76,9 +76,9 @@ Order 4: 0     # 16B block free
    - Continue until buddy is allocated or max order reached
 
 3. **Bitmap Semantics**:
-   - 0: Block is either free or split
-   - 1: Block is allocated
-   - Split state must be tracked separately in the allocator
+   - 0: Block is completely free at this order
+   - 1: Block is either allocated or split (not available at this order)
+   - The allocator must track whether a block is split or allocated separately
 
 ## 🖼️ Memory Layout Evolution
 
